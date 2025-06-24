@@ -1,0 +1,676 @@
+/* Resetting margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body settings */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: right; /* Alignment to the right */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Header with the links */
+.header {
+  display: flex;
+  justify-content: center; /* Center the links horizontally */
+  align-items: center;
+  padding: 10px 0;
+  background-color: #333;
+  position: fixed; /* Fixed positioning to stay at the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure header stays on top */
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  margin: 0 15px; /* Spacing between the links */
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+.header a:hover {
+  color: #f0a500; /* Highlight links when hovering */
+}
+
+.header a:active {
+  color: #ff5733; /* Color on click */
+}
+
+/* Main content styling */
+.main-content {
+  padding: 80px 20px 20px; /* Add space for the fixed header */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  background-color: #388e3c;
+}
+
+button:focus {
+  outline: none;
+}
+
+
+/* TodoList page styling */
+.todo-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Add Todo form */
+.addForm {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.addForm label,
+.search-container label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.addForm input,
+.search-container input,
+.search-container select {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* TodoItem styling */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 100px;
+}
+
+.todo-item .edit-btn,
+.todo-item .delete-btn {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.todo-item .edit-btn {
+  background-color: #f0a500;
+}
+
+
+.todo-item input[type="text"] {
+  padding: 5px;
+  font-size: 16px;
+  width: 80%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .todo-container {
+    padding: 15px;
+  }
+
+  .addForm input,
+  .search-container input,
+  .search-container select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todo-item button {
+    margin-top: 5px;
+  }
+}
+
+/* Post List Page */
+.post-item {
+  background-color: #ebebeb;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 10px;
+  border-color: black;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.post-body {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+.add-comment-btn,
+.comments-btn {
+  font-size: 1rem;
+  margin: 10px 0;
+  background-color: #28a745;
+}
+
+/* Add Post Form */
+.addForm {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.addForm input,
+.addForm textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  color: #555;
+}
+
+.addForm button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  background-color: #28a745;
+  color: white;
+}
+
+/* Comment Section */
+.comment-item {
+  background-color: #f0f0f0;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment-body {
+  font-size: 1rem;
+  color: #444;
+}
+
+.comment-item strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.edit-comment-form {
+  margin-top: 15px;
+}
+
+.edit-comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+/* Search Post Section */
+h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+select,
+input {
+  padding: 10px;
+  margin-top: 8px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+select {
+  background-color: #f1f1f1;
+}
+
+input {
+  background-color: #f9f9f9;
+}
+
+/* Album Section */
+.album-container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.album-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.album-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.album-item .album-title {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.album-item .album-description {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+.album-item .album-date {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 5px;
+}
+
+.album-item button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.album-item button:hover {
+  background-color: #45a049;
+}
+
+.album-item button:active {
+  background-color: #388e3c;
+}
+
+/* Album Search Section */
+.album-search {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.album-search input {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.album-search button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.album-search button:hover {
+  background-color: #45a049;
+}
+
+.album-search button:active {
+  background-color: #388e3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .album-item {
+    padding: 15px;
+  }
+
+  .album-item .album-title {
+    font-size: 1.2rem;
+  }
+
+  .album-item .album-description,
+  .album-item .album-date {
+    font-size: 0.9rem;
+  }
+
+  .album-search input {
+    width: 250px;
+  }
+}
+/* Resetting margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body settings */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: right; /* Alignment to the right */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  direction: rtl; /* Set text direction to right-to-left */
+}
+
+
+/* Main content styling */
+.main-content {
+  padding: 80px 20px 20px; /* Add space for the fixed header */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Button styles */
+
+button:hover {
+  background-color: #45a049; /* Hover state */
+}
+
+button:active {
+  background-color: #388e3c; /* Active state */
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Form settings */
+.addForm,
+.search-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.addForm label,
+.search-container label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.addForm input,
+.search-container input,
+.search-container select {
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.addForm button {
+  width: 100%; /* Ensure button takes full width of the form */
+}
+
+/* TodoItem styling */
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-item button {
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.todo-item .edit-btn,
+.todo-item .delete-btn {
+  background-color: #4CAF50; /* Green background for both buttons */
+  color: white;
+}
+
+.todo-item .edit-btn:hover,
+.todo-item .delete-btn:hover {
+  background-color: #45a049; /* Hover state */
+}
+
+.todo-item .edit-btn:active,
+.todo-item .delete-btn:active {
+  background-color: #388e3c; /* Active state */
+}
+
+
+
+.todo-item input[type="text"] {
+  padding: 5px;
+  font-size: 16px;
+  width: 80%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .todo-container {
+    padding: 15px;
+  }
+
+  .addForm input,
+  .search-container input,
+  .search-container select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .todo-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .todo-item button {
+    margin-top: 5px;
+  }
+}
+/* Resetting margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body settings */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: right; /* Alignment to the right */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  direction: rtl; /* Set text direction to right-to-left */
+}
+
+
+/* Main content styling */
+.main-content {
+  padding: 80px 20px 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.user-info p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button.primary {
+  background-color: #4CAF50;
+  color: black;
+}
+
+button.primary:hover {
+  background-color: #45a049;
+}
+
+button.primary:active {
+  background-color: #388e3c;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Button styling */
+button.primary {
+  background-color: #4CAF50;
+  color: black;
+}
+
+button.primary:hover {
+  background-color: #45a049;
+}
+
+button.primary:active {
+  background-color: #388e3c;
+}
+
+/* Footer styles */
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+}
+
+
